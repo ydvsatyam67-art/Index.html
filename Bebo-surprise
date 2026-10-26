@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Little Surprise for BEBO 💗</title>
+<style>
+:root {
+  --site-primary: #ff78ad;
+  --site-secondary: #ffd7e7;
+  --site-background: #fff0f6;
+  --site-on-primary: #ffffff;
+  --site-on-secondary: #7b3153;
+  --site-on-background: #6c2447;
+  --site-font-body: "Trebuchet MS", "Segoe UI", sans-serif;
+  --site-font-heading: "Trebuchet MS", "Segoe UI", sans-serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: var(--site-font-body);
+  background: light-dark(#fff0f6, #29121f);
+  color: light-dark(#6c2447, #ffe4ef);
+  min-height: 100vh;
+}
+#app {
+  min-height: 100vh;
+  width: 100%;
+  border-radius: 0;
+  background-color: var(--site-background);
+  background-image: radial-gradient(circle at 12% 18%, #ffffffb8 0 4px, transparent 5px),
+                    radial-gradient(circle at 88% 24%, #ff9fc755 0 7px, transparent 8px),
+                    radial-gradient(circle at 18% 82%, #ff9fc755 0 6px, transparent 7px),
+                    linear-gradient(145deg, #fff6fa, #ffe0ed 55%, #fff0f6);
+  color: var(--site-on-background);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: calc(24px * var(--site-spacing-scale));
+}
+.decor {
+  position: fixed;
+  z-index: 0;
+  opacity: var(--site-decoration-opacity);
+  pointer-events: none;
+  user-select: none;
+  animation: floaty 5s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px #f07ba733);
+}
+.d1 { left: 7%; top: 10%; font-size: 34px; }
+.d2 { right: 8%; top: 14%; font-size: 29px; animation-delay: -1.5s; }
+.d3 { left: 9%; bottom: 13%; font-size: 26px; animation-delay: -2s; }
+.d4 { right: 9%; bottom: 12%; font-size: 35px; animation-delay: -.8s; }
+.d5 { left: 18%; top: 48%; font-size: 18px; animation-delay: -3s; }
+.d6 { right: 18%; top: 57%; font-size: 20px; animation-delay: -2.3s; }
+@keyframes floaty { 0%,100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-12px) rotate(6deg); } }
+.card {
+  z-index: 1;
+  width: min(100%, 470px);
+  text-align: center;
+  padding: calc(32px * var(--site-spacing-scale)) calc(24px * var(--site-spacing-scale));
+  border: 2px solid #ffffffd9;
+  border-radius: calc(32px * var(--site-radius-scale));
+  background: #ffffffd9;
+  box-shadow: 0 20px 55px #d95b8e2b, inset 0 0 0 1px #ffd6e7;
+  backdrop-filter: blur(8px);
+}
+.sticker {
+  width: 92px; height: 92px;
+  margin: 0 auto 15px;
+  display: grid; place-items: center;
+  font-size: 48px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffe1ed, #ffb9d5);
+  box-shadow: 0 8px 20px #e67aa533;
+  border: 4px solid #fff;
+}
+.eyebrow {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 7px 13px;
+  background: #fff0f6;
+  color: #d64b85;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+h1 {
+  font-family: var(--site-font-heading);
+  font-size: calc(36px * var(--site-heading-scale));
+  line-height: 1.08;
+  margin: 0;
+  color: #e94f91;
+  letter-spacing: -1.3px;
+  text-shadow: 0 2px 0 #fff;
+}
+h1 span { color: #ff8eb8; }
+.subtitle {
+  margin: 14px auto 0;
+  max-width: 310px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #9d5575;
+}
+.divider {
+  display: flex; align-items: center; gap: 12px;
+  margin: 23px 0;
+  color: #f18bb4;
+  font-size: 17px;
+}
+.divider:before, .divider:after { content: ""; height: 1px; flex: 1; background: #ffd1e3; }
+.question {
+  font-size: 25px;
+  font-weight: 800;
+  color: #a83b6c;
+  margin: 0 0 7px;
+}
+.question-note { font-size: 13px; color: #b87592; margin: 0 0 22px; }
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 54px;
+  position: relative;
+  flex-wrap: wrap;
+}
+button {
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 25px;
+  min-width: 125px;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  touch-action: manipulation;
+}
+button:focus-visible { outline: 3px solid #b93b74; outline-offset: 4px; }
+#yesBtn {
+  background: linear-gradient(135deg, #ff6da5, #f04d91);
+  color: white;
+  box-shadow: 0 9px 20px #f04d9144;
+}
+#yesBtn:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 12px 24px #f04d9155; }
+#noBtn {
+  color: #a34d70;
+  background: #ffe4ef;
+  border: 1px solid #ffc6dc;
+  box-shadow: 0 6px 14px #e98ab022;
+  position: relative;
+}
+.footnote { margin: 23px 0 0; font-size: 11px; color: #c27a98; }
+.footnote span { color: #f26b9f; }
+.modal {
+  position: fixed; inset: 0; z-index: 10;
+  display: none; place-items: center;
+  padding: 20px;
+  background: #4a1834a8;
+  backdrop-filter: blur(7px);
+}
+.modal.show { display: grid; animation: fadeIn .22s ease both; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.modal-card {
+  width: min(100%, 390px);
+  text-align: center;
+  border-radius: 30px;
+  padding: 30px 23px 26px;
+  background: linear-gradient(155deg, #fffafd, #ffe4ef);
+  border: 3px solid white;
+  box-shadow: 0 25px 70px #30051e66;
+  animation: pop .35s cubic-bezier(.2,1.4,.5,1) both;
+}
+@keyframes pop { from { transform: scale(.72) translateY(15px); } to { transform: scale(1) translateY(0); } }
+.modal-heart { font-size: 52px; margin-bottom: 8px; }
+.modal-card h2 { font-size: 25px; line-height: 1.25; color: #df4688; margin: 0 0 13px; }
+.modal-card p { font-size: 15px; line-height: 1.7; color: #8f4768; margin: 0 0 20px; }
+#closeBtn { min-width: 0; padding: 12px 24px; background: #f35d9b; color: white; box-shadow: 0 7px 16px #f35d9b44; }
+#hearts { position: fixed; inset: 0; overflow: hidden; z-index: 11; pointer-events: none; }
+.floating-heart { position: absolute; bottom: -45px; font-size: 24px; animation: rise 2.6s ease-in forwards; }
+@keyframes rise { to { transform: translateY(-115vh) rotate(35deg); opacity: 0; } }
+@media (max-width: 420px) {
+  .card { padding: 28px 18px; }
+  h1 { font-size: calc(32px * var(--site-heading-scale)); }
+  .question { font-size: 23px; }
+  button { min-width: 116px; padding: 13px 20px; }
+  .d1 { left: 3%; } .d2 { right: 3%; } .d3 { left: 4%; } .d4 { right: 4%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+</style>
+</head>
+<body>
+<main id="app" data-sites-preview-theme="custom">
+  <div class="decor d1" aria-hidden="true">💗</div>
+  <div class="decor d2" aria-hidden="true">🎀</div>
+  <div class="decor d3" aria-hidden="true">🌸</div>
+  <div class="decor d4" aria-hidden="true">💞</div>
+  <div class="decor d5" aria-hidden="true">✨</div>
+  <div class="decor d6" aria-hidden="true">💕</div>
+  <section class="card" aria-label="A little surprise for Bebo">
+    <div class="sticker" aria-hidden="true">🐻💗</div>
+    <div class="eyebrow">A TINY SURPRISE FOR YOU</div>
+    <h1>I LOVE <span>BEBO</span><br>😚🙈</h1>
+    <p class="subtitle">Someone has a very important little question to ask you… 💌</p>
+    <div class="divider" aria-hidden="true">♡ ✦ ♡</div>
+    <p class="question">DI YOU 🤧?</p>
+    <p class="question-note">Choose carefully… hehe 🙈</p>
+    <div class="buttons" id="buttonArea">
+      <button id="yesBtn" type="button">YES 😘</button>
+      <button id="noBtn" type="button">NO 🙂‍↔️</button>
+    </div>
+    <p class="footnote">made with <span>♥</span> just for you</p>
+  </section>
+</main>
+<div class="modal" id="loveModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <div class="modal-heart">💖🥹💖</div>
+    <h2 id="modalTitle">YAYYY! I KNEW IT! 🎀</h2>
+    <p>I am very Lucky to have you in my life 🤗🤭</p>
+    <button id="closeBtn" type="button">Awww, okay 💗</button>
+  </div>
+</div>
+<div id="hearts" aria-hidden="true"></div>
+<script>
+(() => {
+  const noBtn = document.getElementById('noBtn');
+  const yesBtn = document.getElementById('yesBtn');
+  const area = document.getElementById('buttonArea');
+  const modal = document.getElementById('loveModal');
+  const closeBtn = document.getElementById('closeBtn');
+  const heartLayer = document.getElementById('hearts');
+
+  function runAway(event) {
+    if (event) event.preventDefault();
+    const areaRect = area.getBoundingClientRect();
+    const btnRect = noBtn.getBoundingClientRect();
+    const margin = 8;
+    const maxX = Math.max(margin, window.innerWidth - btnRect.width - margin);
+    const maxY = Math.max(margin, window.innerHeight - btnRect.height - margin);
+    let x = margin + Math.random() * (maxX - margin);
+    let y = margin + Math.random() * (maxY - margin);
+    // Occasionally hop near the button row, but always choose a fresh position.
+    if (Math.random() < 0.25) {
+      x = Math.max(margin, Math.min(maxX, areaRect.left + Math.random() * Math.max(1, areaRect.width - btnRect.width)));
+      y = Math.max(margin, Math.min(maxY, areaRect.top + (Math.random() - 0.5) * 150));
+    }
+    noBtn.style.position = 'fixed';
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+    noBtn.style.zIndex = '5';
+    noBtn.style.transform = 'rotate(' + (Math.random() * 18 - 9) + 'deg)';
+  }
+  noBtn.addEventListener('pointerenter', runAway);
+  noBtn.addEventListener('pointerdown', runAway);
+  noBtn.addEventListener('click', runAway);
+  yesBtn.addEventListener('click', () => {
+    modal.classList.add('show');
+    closeBtn.focus();
+    for (let i = 0; i < 24; i++) {
+      const heart = document.createElement('span');
+      heart.className = 'floating-heart';
+      heart.textContent = ['💗','💖','💕','💘','🌸'][Math.floor(Math.random() * 5)];
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDelay = (Math.random() * 1.1) + 's';
+      heart.style.fontSize = (18 + Math.random() * 20) + 'px';
+      heartLayer.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }
+  });
+  function closeModal() {
+    modal.classList.remove('show');
+    yesBtn.focus();
+  }
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+})();
+</script>
+</body>
+</html>
